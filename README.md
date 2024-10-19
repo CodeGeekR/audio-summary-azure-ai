@@ -10,6 +10,10 @@
 
 Este script permite transcribir archivos de audio y analizar archivos de texto utilizando los servicios de Azure AI. Puede procesar archivos de texto en formatos `.txt`, `.docx`, `.pdf` y `.doc`, así como archivos de audio en formatos `.mp3`, `.wav` y `.m4a`. Después de la transcripción o lectura del archivo, el usuario puede seleccionar varias opciones de análisis, como la extracción de palabras clave, entidades, enlaces y resúmenes abstractivos.
 
+### **¡Nueva Funcionalidad!** 🎉
+
+Ahora puedes obtener audio directamente desde una URL de YouTube. Esta nueva característica te permite transcribir y analizar el contenido de videos de YouTube de manera rápida y sencilla.
+
 ## Requisitos
 
 - Python 3.8 o superior
@@ -66,18 +70,25 @@ Este script permite transcribir archivos de audio y analizar archivos de texto u
 
    ```plaintext
    Seleccione la fuente de entrada:
-   1. Archivo de texto (txt, doc, pdf)
-   2. Archivo de audio (mp3, wav, m4a)
+   ```
+
+3. Enlace de YouTube
+4. Archivo de audio (mp3, wav, m4a)
+5. Archivo de texto (txt, doc, pdf)
+
    ```
 
    Ingresa el número de la opción seleccionada.
 
-3. **Procesar archivos:**
+   ```
 
-   - Si seleccionas [`1`], el script procesará todos los archivos de texto en la carpeta [reviews]
-   - Si seleccionas [`2`], el script transcribirá todos los archivos de audio en la carpeta [audio] y guardará los resultados en la carpeta [reviews].
+6. **Procesar archivos:**
 
-4. **Seleccionar opciones de análisis:**
+   - Si seleccionas [`1`], el script te pedirá que ingreses el enlace de YouTube. El audio se descargará, se transcribirá y se guardará en la carpeta `audio`. Luego, el script procesará el archivo de texto y te mostrará los resultados.
+   - Si seleccionas [`2`], el script transcribirá todos los archivos de audio en la carpeta `audio` y procesará los archivos de texto en la carpeta `reviews`. Luego, te mostrará los resultados en la carpeta `summary`.
+   - Si seleccionas [`3`], el script procesará todos los archivos de texto en la carpeta `reviews` y te mostrará los resultados en la carpeta `summary`.
+
+7. **Seleccionar opciones de análisis:**
 
    Después de procesar cada archivo, el script te pedirá que selecciones las opciones de análisis:
 
@@ -98,6 +109,7 @@ Este script permite transcribir archivos de audio y analizar archivos de texto u
 - **TQDM**: Biblioteca para mostrar barras de progreso.
 - **PyPDF2**: Biblioteca para leer archivos PDF.
 - **Pydub**: Biblioteca para manipulación de audio.
+- **yt-dlp**: Biblioteca para descargar audio de YouTube.
 
 ## Contribuciones
 
